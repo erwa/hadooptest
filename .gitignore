@@ -4,3 +4,7 @@
 *.jar
 *.war
 *.ear
+
+# Ignore any files with "Test" or "test" in their names
+*Test*
+*test*
