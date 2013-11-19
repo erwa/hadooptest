@@ -8,3 +8,6 @@
 # Ignore any files with "Test" or "test" in their names
 *Test*
 *test*
+
+# Ignore Eclipse .classpath file since $HADOOP_HOME is different on each machine
+.classpath
