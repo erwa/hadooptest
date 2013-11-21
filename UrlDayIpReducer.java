@@ -17,18 +17,18 @@ import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
 
-    public class UrlDayIpReducer extends MapReduceBase implements Reducer<Text,Text,Text,Text> {
-       private Text daysVal = new Text(); 
+public class UrlDayIpReducer extends MapReduceBase implements Reducer<Text,Text,Text,Text> {
+   private Text daysVal = new Text(); 
 
-        public void reduce(Text k, Iterator<Text> vals, OutputCollector<Text,Text> output, Reporter r) throws IOException {
-            String days = vals.next().toString();
-            while (vals.hasNext()) {
-                days += ","+vals.next().toString();
-            
-            }
-            daysVal.set(days);
-            output.collect(k,daysVal);
+    public void reduce(Text k, Iterator<Text> vals, OutputCollector<Text,Text> output, Reporter r) throws IOException {
+        String days = vals.next().toString();
+        while (vals.hasNext()) {
+            days += ","+vals.next().toString();
+        
         }
+        daysVal.set(days);
+        output.collect(k,daysVal);
     }
+}
 
 

@@ -15,12 +15,15 @@ public class UDIRNew extends Reducer<Text,Text,Text,ArrayWritable> {
     private static ArrayWritable dayVals = new MyArrayWritable(Text.class);
     private static Text[] textArray = new Text[0];
 
-    public void reduce(Text k, Iterator<Text> vals, Context c) throws IOException, InterruptedException {
+    // It's very good practice to add @Override, so you don't accidentally NOT override the reduce function,
+    // which causes the default identity reducer to be used.
+    @Override
+    public void reduce(Text k, Iterable<Text> vals, Context c) throws IOException, InterruptedException {
     	System.out.println("REDUCER OUTPUT");
     	
     	List<Text> days = new ArrayList<Text>();
-        while (vals.hasNext()) {
-            days.add(vals.next());
+    	for (Text t : vals) {
+            days.add(t);
         }
         dayVals.set(days.toArray(textArray));
 
