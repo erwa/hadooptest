@@ -1,5 +1,4 @@
 //package test;
-
 import java.io.IOException;
 import java.util.Iterator;
 
@@ -21,7 +20,7 @@ public class UrlDayIpDriver {
     public void run(String[] args) throws Exception {
        JobConf conf = new JobConf();
 
-        conf.setJarByClass(UrlDayIpMapper.class);
+       conf.setJarByClass(UrlDayIpMapper.class);
        conf.setJobName(getClass().getCanonicalName());
        conf.setMapperClass(UrlDayIpMapper.class);
        conf.setReducerClass(UrlDayIpReducer.class);
