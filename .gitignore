@@ -11,3 +11,4 @@
 
 # Ignore Eclipse .classpath file since $HADOOP_HOME is different on each machine
 .classpath
+/bin
