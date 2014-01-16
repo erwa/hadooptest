@@ -11,6 +11,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
+import utils.TextArrayWritableInputFormat;
+import utils.TextArrayWritableOutputFormat;
+
 public class IdentityAW extends Configured implements Tool {
 	@Override
     public int run(String[] args) throws Exception {

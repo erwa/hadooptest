@@ -11,8 +11,8 @@ import org.apache.hadoop.mapreduce.Reducer;
 import utils.MyArrayWritable;
 
 public class UDIRNew extends Reducer<Text,Text,Text,ArrayWritable> {
-    private static ArrayWritable dayVals = new MyArrayWritable(Text.class);
-    private static Text[] textArray = new Text[0];
+    private ArrayWritable dayVals = new MyArrayWritable(Text.class);
+    private Text[] textArray = new Text[0];
 
     // It's very good practice to add @Override, so you don't accidentally NOT override the reduce function,
     // which causes the default identity reducer to be used.
